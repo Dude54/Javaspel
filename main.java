@@ -17,7 +17,7 @@ public static void main(String[] args) {
     f.add(game);
     f.setVisible(true);
 
-    Timer timer = new Timer(1, new ActionListener(){
+    Timer timer = new Timer(10, new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e) {
             game.spellogik();

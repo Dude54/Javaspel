@@ -22,4 +22,34 @@ public class paddel {
 
     }
 
+    public void rörelseMot(int rörY) {
+        int mittenY = y + höjd / 2;
+
+        if(Math.abs(mittenY - rörY) > hastighet){
+
+        if(mittenY > rörY){
+            y -= hastighet;
+
+        }
+        if(mittenY < rörY){
+            y += hastighet;
+        }
+      } 
+    }
+
+    public boolean kontrollKollision(paddel p, boll b){
+        int högerX = x + PADDEL_WIDTH;
+        int bottenY = y + höjd;
+
+        if(b.getX() > (x - b.getSize()) && b.getX() < högerX){
+            //check if Ball is between the y values
+            if(b.getY() > y && b.getY() < bottenY){
+                return true;
+            }
+
+        }
+        return false;
+
+    }
+
 }

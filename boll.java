@@ -32,6 +32,10 @@ public void rörelseboll(){
     y += cy;
 }
 
+public void studsPaddel(){
+    reverseX();
+}
+
 public void studsa(int top, int bottom) {
     if (y > bottom){
         reverseY();
@@ -40,22 +44,49 @@ public void studsa(int top, int bottom) {
         reverseY();
     }
 
-    if(x < 0){
+    /*if(x < 0){
         reverseX();
     }
     else if(x > 640){
         reverseX();
-    }
-
+    }*/
+ 
 }
 
-public void reverseY() {
+    public void reverseY() {
     cy *= -1;
 }
 
-public void reverseX() {
+    public void reverseX() {
     cx *= -1;
 }
+    public int getY(){
+        return y;
+    }
+    public int getX(){
+        return x;
+    }
+    public int getSize() {
+        return 0;
+    }
+    public void setX(int i) {
+        x = i;
+    }
+    public void setY(int i) {
+        y = i;
+    }
+    public void setCx(int i) {
+        cx = i;
+    }
+    public void setCy(int i) {
+        cy = i;
+    }
+    public void setHastighet(int i) {
+        hastighet = i;
+    }
+       
+
+
 
 }
 
