@@ -2,9 +2,16 @@ import javax.swing.text.AttributeSet.ColorAttribute;
 import javax.swing.*;
 import java.awt.*;
 
+
 public class boll {
 private int x, y, cx, cy, hastighet, storlek;
 private Color color;
+static final int MAX_HASTIGHET = 100;
+//private ImageIcon image = new ImageIcon(getClass().getResource("fotboll.png"));
+
+
+
+
 
 public boll(int x, int y, int cx, int cy, int hastighet, Color color, int storlek) {
     this.x = x;
@@ -16,16 +23,19 @@ public boll(int x, int y, int cx, int cy, int hastighet, Color color, int storle
     this.storlek = storlek;
     
 
+    
+
  }
- public void paint(Graphics g){
+ /*public void paint(Graphics g){
+    g.drawImage(image.getImage(), x, y, storlek, storlek, null);
+    
 
-    //set the brush color to the ball color
-    g.setColor(color);
+    
+    
+    
+    
 
-    //paint the ball at x, y with a width and height of the ball size
-    g.fillOval(x, y, storlek, storlek);
-
-}
+}*/
 
 public void rörelseboll(){
     x += cx;
@@ -44,12 +54,7 @@ public void studsa(int top, int bottom) {
         reverseY();
     }
 
-    /*if(x < 0){
-        reverseX();
-    }
-    else if(x > 640){
-        reverseX();
-    }*/
+   
  
 }
 
@@ -84,6 +89,18 @@ public void studsa(int top, int bottom) {
     public void setHastighet(int i) {
         hastighet = i;
     }
+
+    public void ökahastighet() {
+        if (hastighet < MAX_HASTIGHET){
+            hastighet++;
+
+            cx = (cx / Math.abs(cx)*hastighet); 
+            cy = (cy / Math.abs(cy)*hastighet); 
+
+
+        }
+    }
+
        
 
 

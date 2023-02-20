@@ -2,7 +2,12 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class main {
+
+// ...
+
+
+
+public class main  {
     private static final int DELAY = 0;
     static JFrame f = new JFrame("Pong spel") ;
     

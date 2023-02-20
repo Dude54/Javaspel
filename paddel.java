@@ -37,7 +37,7 @@ public class paddel {
       } 
     }
 
-    public boolean kontrollKollision(paddel p, boll b){
+    public boolean kontrollKollisionSpelare(paddel p, boll b){
         int högerX = x + PADDEL_WIDTH;
         int bottenY = y + höjd;
 
@@ -49,6 +49,30 @@ public class paddel {
 
         }
         return false;
+
+    }
+
+    public boolean kontrollKollisionDator(paddel p, boll b){
+        int WINDOW_WIDTH = 664;
+        int VänsterX = x-(PADDEL_WIDTH*2);
+        int bottenY = y + höjd;
+
+        /*if(b.getX() > (x + b.getSize()) && b.getX() > 415){
+            //check if Ball is between the y values
+            /*if(b.getY() > y && b.getY() < bottenY){
+                return true;
+            }
+            return true;
+
+
+        }*/
+        if((b.getX() + 10) > 615){
+            if(b.getY() > y && b.getY() < bottenY){
+        return true;
+            }
+        }
+        return false;
+
 
     }
 
